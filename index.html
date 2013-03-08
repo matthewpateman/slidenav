@@ -78,18 +78,27 @@ Donec placerat. Nullam nibh dolor, blandit sed, fermentum id, imperdiet sit amet
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script>
 
-
+var mainPosition = window.pageYOffset
  
 var menu = function() {
 
+
+
 if ( $("#main").hasClass("move") ) {
-	
+	$("#main").removeAttr( 'style' );
+
+	document.body.scrollTop(mainPosition);
+	alert(mainPosition);
 	$("#main").removeClass("move");
 	$("header").removeClass("move");
 }
 
 else {
+
+mainPosition = window.pageYOffset
+
 $("#main").addClass("move");
+$("#main").css("top", mainPosition * -1)
 $("header").addClass("move");
 }
 
