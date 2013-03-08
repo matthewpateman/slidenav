@@ -57,18 +57,18 @@ nav ul li .text {display:block; width:200px; height:29px; position:relative; top
 
 #links {height:902px; background-color:#99CC00;padding-top:44px;}
 
-
+#links_wrapper {height:100%; overflow: hidden;}
 
 #content_wrapper {
 		background-color:#FFF;
 
 		min-height: 100%;
-		padding-top:44px;
 		}
 
 #content { 
-		box-sizing: border-box;
-		padding:12px;
+
+		box-sizing:border-box;
+		padding:56px 12px 12px 12px;
 		}
 
 
