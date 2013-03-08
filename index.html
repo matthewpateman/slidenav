@@ -44,7 +44,7 @@ Donec placerat. Nullam nibh dolor, blandit sed, fermentum id, imperdiet sit amet
 	<section id="search">
 		<input type="text" placeholder="Search" />
 	</section>
-	<div id="links_wrapper">
+	<div id="links_wrapper" class="navHide">
 		<section id="links">
 			<ul>
 				<li><span class="img"></span><span class="text">Title</span></li>
@@ -78,19 +78,28 @@ Donec placerat. Nullam nibh dolor, blandit sed, fermentum id, imperdiet sit amet
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script>
 
+$(document).ready(function() {
+
+//	$(document).scrollTop(300);
+
+  // Handler for .ready() called.
+});
+
+
 var mainPosition = window.pageYOffset
  
 var menu = function() {
 
-
-
 if ( $("#main").hasClass("move") ) {
 	$("#main").removeAttr( 'style' );
 
-	document.body.scrollTop(mainPosition);
-	alert(mainPosition);
 	$("#main").removeClass("move");
 	$("header").removeClass("move");
+
+
+	$('#links_wrapper').addClass("navHide");
+	$('#links_wrapper').removeClass("navShow");
+
 }
 
 else {
@@ -98,8 +107,11 @@ else {
 mainPosition = window.pageYOffset
 
 $("#main").addClass("move");
-$("#main").css("top", mainPosition * -1)
+//$("#main").css("top", mainPosition * -1)
 $("header").addClass("move");
+
+	$('#links_wrapper').removeClass("navHide");
+	$('#links_wrapper').addClass("navShow");
 }
 
 }
