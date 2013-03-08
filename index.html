@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <meta name = "viewport" content = "width = device-width, initial-scale = 1, user-scalable = no">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -86,19 +86,31 @@ $(document).ready(function() {
 });
 
 
-var mainPosition = window.pageYOffset
+
+
+var navPosition
+
+var mainPosition
  
 var menu = function() {
 
 if ( $("#main").hasClass("move") ) {
+
+	navPosition = window.pageYOffset
+	
+
+	alert(mainPosition);
 	$("#main").removeAttr( 'style' );
 
 	$("#main").removeClass("move");
 	$("header").removeClass("move");
 
+//    $('#links_wrapper').addClass("navHide");
+//	$('#links_wrapper').removeClass("navShow");
+//	$('#links_wrapper').css("top", "0");
 
-	$('#links_wrapper').addClass("navHide");
-	$('#links_wrapper').removeClass("navShow");
+
+
 
 }
 
@@ -106,12 +118,12 @@ else {
 
 mainPosition = window.pageYOffset
 
-$("#main").addClass("move");
-//$("#main").css("top", mainPosition * -1)
-$("header").addClass("move");
+//$("#main").addClass("move");
+$("#main").css("top", mainPosition * -1)
+//$("header").addClass("move");
 
-	$('#links_wrapper').removeClass("navHide");
-	$('#links_wrapper').addClass("navShow");
+//	$('#links_wrapper').removeClass("navHide");
+//	$('#links_wrapper').addClass("navShow");
 }
 
 }

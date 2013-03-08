@@ -59,7 +59,7 @@ nav ul li .text {display:block; width:200px; height:29px; position:relative; top
 
 #links_wrapper
 
-.navShow {height:auto; overflow: scroll;}
+.navShow {height:auto; overflow: scroll; top:0px;}
 .navHide {height:100%; overflow: hidden;}
 #content_wrapper {
 		background-color:#FFF;
