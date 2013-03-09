@@ -5,7 +5,7 @@ body {
 		margin:0;
 		background-color:#000000;
 		overflow-x:hidden; width:100%;
-		font-family:Helvetica Neue;
+		font-family: 'Open Sans', sans-serif;
 		line-height: 1.5
 	}
 
@@ -33,17 +33,28 @@ nav {
 		position:absolute;
 		left:10px;
 		top:8px;
-		height:28px;
+		height:24px;
 
 		width:230px;
-		border:none; 
+		border:1px solid #323949; 
 		-webkit-border-radius:14px;
 		margin:0px;
 		padding:0px;
-		font-size:16px;
-
+		font-size:12px;
+		font-weight:600;
 		padding-left:10px;
 		outline: none;
+
+		box-shadow:
+			inset 0px -1px 1px rgba(255,255,255,0.3), 
+			inset 0px 1px 1px rgba(0,0,0,0.3);;
+
+		background-image: linear-gradient(bottom, rgb(255,255,255) 40%, rgb(218,220,224) 100%);
+		background-image: -o-linear-gradient(bottom, rgb(255,255,255) 40%, rgb(218,220,224) 100%);
+		background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 40%, rgb(218,220,224) 100%);
+		background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 40%, rgb(218,220,224) 100%);
+		background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 40%, rgb(218,220,224) 100%);
+
 	}
 
 nav ul {-webkit-padding-start:0px; margin:0px;}
@@ -53,7 +64,19 @@ nav ul li {height:39px; background:#323949; border-top:1px solid #3E4554; border
 
 nav ul li .img {display:block; width:35px; height:35px; position:relative; top:2px; margin-left:10px; background-color:#FFF; float:left; border-radius:3px;}
 
-nav ul li .text {display:block; width:200px; height:29px; position:relative; top:0px; margin-left:10px; color:#FFF; float:left; vertical-align:middle; font-size:22px; padding-top:6px;}
+nav ul li .text {
+	display:block;
+	width:200px;
+	height:29px;
+	position:relative;
+	top:0px; margin-left:10px;
+
+	color:#DADCE0;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-size:20px;
+	
+	float:left; vertical-align:middle;  padding-top:5px;}
 
 #links {height:902px; background-color:#99CC00;padding-top:44px;}
 
