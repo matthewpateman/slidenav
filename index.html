@@ -87,12 +87,24 @@ $(document).ready(function() {
 });
 
 
-var mainPosition = window.pageYOffset
+
+var bodyPosition
+
+var navPosition
+
  
 var menu = function() {
 
+
+
+
+
+
 if ( $("#main").hasClass("move") ) {
-	$("#main").removeAttr( 'style' );
+
+	navPosition = window.pageYOffset
+
+	$("#main").removeAttr("style");
 
 	$("#main").removeClass("move");
 	$("header").removeClass("move");
@@ -105,10 +117,10 @@ if ( $("#main").hasClass("move") ) {
 
 else {
 
-mainPosition = window.pageYOffset
+bodyPosition = window.pageYOffset
 
 $("#main").addClass("move");
-//$("#main").css("top", mainPosition * -1)
+$("#main").css("top", bodyPosition * -1);
 $("header").addClass("move");
 
 	$('#links_wrapper').removeClass("navHide");
