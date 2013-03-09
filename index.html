@@ -79,12 +79,12 @@ Donec placerat. Nullam nibh dolor, blandit sed, fermentum id, imperdiet sit amet
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script>
 
-$(document).ready(function() {
+var view = "closed";
 
 //	$(document).scrollTop(300);
 
   // Handler for .ready() called.
-});
+
 
 
 
@@ -95,36 +95,52 @@ var navPosition
  
 var menu = function() {
 
+if ( view == "open" ) {
 
-
-
-
-
-if ( $("#main").hasClass("move") ) {
-
+	// IF NAVIGATION IS VISIBLE
 	navPosition = window.pageYOffset
 
-	$("#main").removeAttr("style");
-
-	$("#main").removeClass("move");
 	$("header").removeClass("move");
+	$("#main").removeClass("move");
+
+
+
+
+	$("#main").removeAttr("style");
+	$(document).scrollTop(bodyPosition)
+
+	$
 
 
 	$('#links_wrapper').addClass("navHide");
+	$("nav").css("top", navPosition * -1);
 	$('#links_wrapper').removeClass("navShow");
+
+	view = "closed";
+
+
+
+	
 
 }
 
-else {
+else if (view == "closed" ){
 
-bodyPosition = window.pageYOffset
+	// IF NAVIGATION ISN'T VISIBLE
 
-$("#main").addClass("move");
-$("#main").css("top", bodyPosition * -1);
-$("header").addClass("move");
+	bodyPosition = window.pageYOffset
+	$(document).scrollTop(bodyPosition)
+
+	$("nav").removeAttr("style");
+
+	$("#main").addClass("move");
+	$("#main").css("top", bodyPosition * -1);
+	$("header").addClass("move");
 
 	$('#links_wrapper').removeClass("navHide");
 	$('#links_wrapper').addClass("navShow");
+
+	view = "open";
 }
 
 }
